@@ -45,8 +45,16 @@ class Course_model extends CI_Model {
 
     public function get_all() 
     {
-        $query = $this->db->get($this->table);
+        
+        $this->db->select('courses.*, users.name as instructor,');
+        $this->db->from('courses');
+        $this->db->join('users', 'users.user_id = courses.instructor_id', 'inner');
+        // $this->db->where('users.user_id', $instructor_id);
+        $query = $this->db->get();
         return $query->result_array();
+    }
+
+    public function get_all_mahasiswa_in_course(){
     }
 
 }

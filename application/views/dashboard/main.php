@@ -30,8 +30,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         <h5 class="card-title">Welcome Back</h5>
 
                                         <div class="mt-4">
-                                            <h5 class="font-weight-bold">Rahmat Suhadi</h5>
-                                            <p>23.01.4968</p>
+                                        
+
+                                            <h5 class="font-weight-bold"><?=$this->session->userdata('role');?></h5>
+                                            <p><?=$this->session->userdata('identity');?></p>
                                             <p  class="card-text">Universitas Amikom Yogyakarta</p>
                                         </div>
 
@@ -130,8 +132,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
                     <div class="d-sm-flex align-items-center justify-content-end mb-4">                        
-                        <a href="#" class="d-none d-sm-inline-block btn btn-primary shadow-sm"><i
-                                class="fas fa-plus fa-sm text-white-50"></i> Add Course</a>
+                        <a class="d-none d-sm-inline-block btn btn-primary shadow-sm"  href="<?=base_url().'dashboard/courses/create'?>">
+                            <i class="fas fa-plus fa-sm text-white-50"></i> Add Course</a>
                     </div>
 
                         <!-- Table Mata Kuliah -->
@@ -163,7 +165,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             <tr>
                                                 <td>
                                                     <div>
-                                                        <h6 class="font-weight-bold"><?=$course['course_name']?></h6>
+                                                        <a href="<?=base_url().'dashboard/courses/'.$course['course_id']?>">
+                                                            <h6 class="font-weight-bold"><?=$course['course_name']?></h6>
+                                                        </a>
                                                         <span><?=$course['code_name']?></span>
                                                     </div>
                                                 </td>
@@ -189,5 +193,3 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
                 </div>
                 <!-- /.container-fluid -->
-
-          

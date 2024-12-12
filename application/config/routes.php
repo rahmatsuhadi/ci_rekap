@@ -57,8 +57,37 @@ $route['translate_uri_dashes'] = FALSE;
 $route['dashboard/courses'] = 'courses/index'; 
 $route['dashboard/courses/create'] = 'courses/create';
 $route['dashboard/courses/store'] = 'courses/store'; 
-$route['dashboard/courses/(:num)'] = 'courses/show/$1';  
+$route['dashboard/courses/(:num)'] = 'courses/detail/$1';  
+$route['dashboard/courses/(:num)/assessment'] = 'courses/assessment/$1/';  
 $route['dashboard/courses/(:num)/edit'] = 'courses/edit/$1'; 
 $route['dashboard/courses/(:num)/update'] = 'courses/update/$1';  
 $route['dashboard/courses/(:num)/delete'] = 'courses/delete/$1'; 
+
+
+$route['dashboard/students'] = 'students/index'; 
+$route['dashboard/students/create'] = 'students/create';
+$route['dashboard/students/store'] = 'students/store'; 
+$route['dashboard/students/(:num)'] = 'students/show/$1';  
+$route['dashboard/students/(:num)/edit'] = 'students/edit/$1'; 
+$route['dashboard/students/(:num)/update'] = 'students/update/$1';  
+$route['dashboard/students/(:num)/delete'] = 'students/delete/$1'; 
+
+
+$route['dashboard/lecturers'] = 'lecturers/index'; 
+$route['dashboard/lecturers/create'] = 'lecturers/create';
+$route['dashboard/lecturers/store'] = 'lecturers/store'; 
+$route['dashboard/lecturers/(:num)'] = 'lecturers/show/$1';  
+$route['dashboard/lecturers/(:num)/edit'] = 'lecturers/edit/$1'; 
+$route['dashboard/lecturers/(:num)/update'] = 'lecturers/update/$1';  
+$route['dashboard/lecturers/(:num)/delete'] = 'lecturers/delete/$1'; 
+
+
+$route['dashboard/users'] = 'users/index'; 
+$route['dashboard/users/create'] = 'users/create';
+$route['dashboard/users/store'] = 'users/store'; 
+$route['dashboard/users/(:num)'] = 'users/show/$1';  
+$route['dashboard/users/(:num)/edit'] = 'users/edit/$1'; 
+$route['dashboard/users/(:num)/update'] = 'users/update/$1';  
+$route['dashboard/users/(:num)/delete'] = 'users/delete/$1'; 
+
 

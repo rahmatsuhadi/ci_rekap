@@ -33,6 +33,12 @@ class User_model extends CI_Model {
         $query = $this->db->get($this->table);
         return $query->result_array();
     }
+    
+    public function get_user_by_role($role = 'dosen') {
+        $this->db->where('role', $role);
+        $query = $this->db->get($this->table);   
+        return $query->result_array();
+    }
 
     public function change_status($user_id, $status) {
         $this->db->where('user_id', $user_id);

@@ -40,7 +40,7 @@
                         
                 <div class="card shadow-lg ">
                     <div class="card-body p-5">
-                        <h4 class="card-title text-center mb-4">Dashboard Login</h4>
+                        <h4 class="card-title text-center mb-4 font-weight-bold">Dashboard Login</h4>
                           <!-- Menampilkan pesan error jika ada -->
                           <?php if ($this->session->flashdata('error')): ?>
                             <div style="color: red;">
