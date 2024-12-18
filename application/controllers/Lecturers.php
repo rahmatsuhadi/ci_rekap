@@ -25,10 +25,6 @@ class Lecturers extends CI_Controller {
 		
 		$data['list_users'] = $this->User_model->get_user_by_role('dosen');
 
-		// $data['courses'] = $this->Course_model->get_all();
-		
-
-
 		$this->load->view('layout/header');
 		$this->load->view('dashboard/user/index' , $data);
 		$this->load->view('layout/footer');

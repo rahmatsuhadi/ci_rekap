@@ -30,19 +30,5 @@ class Users extends CI_Controller {
 		$this->load->view('layout/footer');
 	}
 
-	public function create(){
-		
-        $data['slug_url'] = 'users';
-
-		$data['list_dosen'] = $this->User_model->get    _user_by_role('dosen');
-
-		$this->load->view('layout/header');
-		$this->load->view('dashboard/user/create_admin', $data);
-		$this->load->view('layout/footer');
-
-		
-
-	}
-
 	
 }

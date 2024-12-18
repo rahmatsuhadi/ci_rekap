@@ -56,9 +56,9 @@
                                         <?php foreach ($list_students_course as $user): ?>
                                             <tr>
                                                 <td>
-                                                        <!-- <a href="<?='course/'.$user['user_id']?>"> -->
+                                                        <a href="<?=$id.'/rekap/'.$user['enrollment_id']?>">
                                                             <h6 class="text-primary font-weight-bold"><?=$user['name']?></h6>
-                                                        <!-- </a> -->
+                                                        </a>
                                                     </td>
 
                                                     <td><?=$user['identity']?></td>

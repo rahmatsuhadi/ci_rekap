@@ -28,8 +28,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </div>
                         </div>
                     
-                        <a class="d-none d-sm-inline-block btn btn-primary shadow-sm"  href="<?=$slug_url.'/create'?>">
-                            <i class="fas fa-plus fa-sm text-white-50"></i>Tambah</a>
+                        <!-- <a class="d-none d-sm-inline-block btn btn-primary shadow-sm"  href="<?=$slug_url.'/create'?>">
+                            <i class="fas fa-plus fa-sm text-white-50"></i>Tambah</a> -->
                     </div>
 
                         <!-- Table Mata Kuliah -->
@@ -43,7 +43,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                 <th>Email</th>
                                                 <th>Identity</th>
                                                 <th>Status</th>
-                                                <th>Action</th>
+                                                <!-- <th>Action</th> -->
                                             </tr>
                                         </thead>
                                         <!-- <tfoot>
@@ -60,14 +60,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         <?php foreach ($list_users as $user): ?>
                                             <tr>
                                                 <td>
-                                                        <a href="courses/<?=$user['user_id']?>">
-                                                            <h6 class="font-weight-bold"><?=$user['name']?></h6>
-                                                        </a>
+                                                        <!-- <a href="courses/<?=$user['user_id']?>"> -->
+                                                            <h6 class="text-primary font-weight-bold"><?=$user['name']?></h6>
+                                                        <!-- </a> -->
                                                     </td>
                                                     <td><?=$user['email']=="" ? "-" : $user['email']?></td>
                                                     <td><?=$user['identity']?></td>
                                                     <td><?=$user['status']?></td>
-                                                <td>
+                                                <!-- <td>
                                                     <button type="button" class="btn btn-sm btn-outline-danger" data-toggle="modal" data-target="#delete-modal-<?=$user['user_id']?>" type="button">
                                                         <i class="fas fa-solid fa-trash text-danger"></i>                                                        
                                                     </button>
@@ -91,7 +91,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                             </div>
                                                         </div>
                                                         </div>
-                                                </td>
+                                                </td> -->
                                             </tr>
                                             <?php endforeach; ?>
                                             
