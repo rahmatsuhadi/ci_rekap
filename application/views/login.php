@@ -12,7 +12,7 @@
     <title>SB Admin 2 - Login</title>
 
     <!-- Custom fonts for this template-->
-    <link href="<?=base_url().'vendor/fontawesome-free/css/all.min.css'?>" rel="stylesheet" type="text/css">
+    <link href="<?=base_url().'assets/fontawesome-free/css/all.min.css'?>" rel="stylesheet" type="text/css">
     <style>
         body {
             background-color: #f8f9fc;
@@ -70,7 +70,7 @@
                             <!-- Login Button -->
                             <button type="submit" class="btn btn-primary btn-block">Login</button>
                         </form>
-                        <hr>
+                        <!-- <hr> -->
                         <!-- Social Media Login Buttons -->
                         <!-- <button type="button" class="btn btn-danger btn-block mb-2">
                             <i class="fab fa-google"></i> Login with Google
@@ -82,9 +82,9 @@
                         <!-- <div class="text-center">
                             <a href="forgot-password.html" class="small">Forgot Password?</a>
                         </div> -->
-                        <div class="text-center">
+                        <!-- <div class="text-center">
                             <a href="register.html" class="small">Create an Account!</a>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
