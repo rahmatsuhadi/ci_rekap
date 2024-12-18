@@ -3,8 +3,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Auth extends CI_Controller {
 
-
-
 	public function login()
 	{
 		$this->load->view('login');
@@ -34,7 +32,7 @@ class Auth extends CI_Controller {
 			$this->session->set_userdata('role', $user['role']);
 			$this->session->set_userdata('name', $user['name']);
 			$this->session->set_userdata('logged_in', TRUE);
-			redirect('dashboard/courses');
+			redirect('/dashboard/courses');
 		} else {
 			// Jika login gagal
 			$this->session->set_flashdata('error', 'Invalid username or password');

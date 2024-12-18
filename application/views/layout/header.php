@@ -12,14 +12,15 @@
 
     <title>Admin Dashboard</title>
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <!-- Custom fonts for this template-->
-    <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="<?=base_url().'assets/fontawesome-free/css/all.min.css'?>" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="/css/sb-admin-2.css" rel="stylesheet">
+    <link href="<?=base_url().'assets/css/sb-admin-2.css'?>" rel="stylesheet">
 
 </head>
 
@@ -35,7 +36,7 @@
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <!-- <i class="fas fa-laugh-wink"></i> -->
-                     <img src="/img/brand.png" width="50" height="50"/>
+                     <img src="<?=base_url().'img/brand.png'?>" width="50" height="50"/>
                 </div>
                 <div class="sidebar-brand-text">Dashboard <sup>
                     <?=$this->session->userdata('role')?>
@@ -49,6 +50,8 @@
             <li class="nav-item active">
                 <a class="nav-link" href="<?=base_url().'dashboard/courses'?>">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <!-- <i class="fa-solid fa-user-lock"></i> -->
+
                     <span>Dashboard</span></a>
             </li>
 
@@ -279,7 +282,7 @@
                                 </h6>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="img/undraw_profile_1.svg"
+                                        <img class="rounded-circle" src="<?=base_url().'img/undraw_profile_1.svg'?>"
                                             alt="...">
                                         <div class="status-indicator bg-success"></div>
                                     </div>
@@ -291,7 +294,7 @@
                                 </a>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="img/undraw_profile_2.svg"
+                                        <img class="rounded-circle" src="<?=base_url().'img/undraw_profile_2.svg'?>"
                                             alt="...">
                                         <div class="status-indicator"></div>
                                     </div>
@@ -303,7 +306,7 @@
                                 </a>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="img/undraw_profile_3.svg"
+                                        <img class="rounded-circle" src="<?=base_url().'img/undraw_profile_3.svg'?>"
                                             alt="...">
                                         <div class="status-indicator bg-warning"></div>
                                     </div>
@@ -313,18 +316,7 @@
                                         <div class="small text-gray-500">Morgan Alvarez · 2d</div>
                                     </div>
                                 </a>
-                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                    <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="https://source.unsplash.com/Mv9hjnEUHR4/60x60"
-                                            alt="...">
-                                        <div class="status-indicator bg-success"></div>
-                                    </div>
-                                    <div>
-                                        <div class="text-truncate">Am I a good boy? The reason I ask is because someone
-                                            told me that people say this to all dogs, even if they aren't good...</div>
-                                        <div class="small text-gray-500">Chicken the Dog · 2w</div>
-                                    </div>
-                                </a>
+
                                 <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
                             </div>
                         </li>
@@ -337,7 +329,7 @@
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?=$this->session->userdata('name')?></span>
                                 <img class="img-profile rounded-circle"
-                                    src="/img/undraw_profile.svg">
+                                    src="<?=base_url().'img/undraw_profile.svg'?>">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"

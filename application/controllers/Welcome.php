@@ -18,10 +18,14 @@ class Welcome extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/userguide3/general/urls.html
 	 */
+	public function sanbox(){
+		$this->load->view('layout/header');
+		$this->load->view('sanbox');
+		$this->load->view('layout/footer');
+	}
 	public function index()
 	{
 		$this->load->view('layout/header');
-		$this->load->view('welcome_message');
 		$this->load->view('layout/footer');
 	}
 	public function table()
