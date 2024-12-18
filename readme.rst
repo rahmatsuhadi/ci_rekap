@@ -1,69 +1,45 @@
+===========================
 Sistem Rekapitulasi Data CI
 ===========================
 
-Berikut adalah contoh dokumentasi proyek yang telah diperbarui dengan format reStructuredText:
-
 Deskripsi
-
-
-Proyek ini adalah aplikasi web menggunakan CodeIgniter 3 untuk mengelola dan merekap data.
+---------
+Proyek ini adalah aplikasi web menggunakan **CodeIgniter 3** untuk mengelola dan merekap data. Aplikasi ini mencakup sistem login, pengelolaan data, dan rekapitulasi data yang dapat diakses melalui dashboard.
 
 Fitur Utama
-
-
-1. Autentikasi Pengguna: Login dan validasi pengguna.
-2. Pengelolaan Data: Mengelola data pengguna dan rekapitulasi data.
-3. Dashboard: Menampilkan laporan rekapitulasi.
+------------
+- Autentikasi pengguna (Login).
+- Pengelolaan data pengguna dan rekapitulasi data.
+- Dashboard untuk menampilkan laporan rekapitulasi.
 
 Prasyarat
-
-
-1. PHP 7.4 atau lebih tinggi
-2. MySQL atau MariaDB
-3. CodeIgniter 3
+----------
+- PHP (7.4 atau lebih tinggi).
+- MySQL (atau MariaDB).
+- CodeIgniter 3.
 
 Instalasi
+---------
+1. Clone repositori:
+git clone https://github.com/username/project-ci-rekapitulasi.git cd project-ci-rekapitulasi
 
 
-Langkah Instalasi
+2. Ubah pengaturan database di **application/config/database.php**.
 
-1. Clone repositori: `git clone (link unavailable)
-2. Ubah pengaturan database di application/config/database.php
-3. Buat database di MySQL (misalnya rekap_data)
-4. Jalankan aplikasi di browser
+3. Buat database di MySQL (misalnya `rekap_data`).
+
+4. Jalankan aplikasi di browser:
 
 Cara Menggunakan
-
-
-Login
-
-1. Masukkan username dan password.
-2. Klik tombol "Login".
-
-Mengelola Data
-
-1. Pilih menu "Data".
-2. Lakukan perubahan data.
-
-Rekapitulasi
-
-1. Akses dashboard.
-2. Lihat laporan rekapitulasi.
+----------------
+1. Login menggunakan akun yang telah dibuat.
+2. Akses dashboard untuk melihat rekapitulasi data.
+3. Pengguna admin dapat mengelola data melalui menu yang tersedia.
 
 Struktur Direktori
+------------------
+/application /controllers # Controller untuk aplikasi /models # Model untuk pengelolaan data /views # Views untuk tampilan antarmuka /assets # Berisi file CSS, JS, dan gambar /index.php # Entri utama aplikasi
 
-
-- /application
-- /controllers
-- /models
-- /views
-- /assets
-- /index.php
-
-Lisensi
-
-
-MIT License
 
 Konfigurasi
 
@@ -71,7 +47,8 @@ Konfigurasi
 - Ubah $config['base_url'] di application/config/config.php menjadi http://localhost/rekap_v2
 - Ubah RewriteBase /rekap_v2 di .htaccess sesuai dengan folder proyek
 
-Catatan
 
+Lisensi
+--------
+MIT License
 
-Pastikan Anda memahami instruksi sebelum menjalankan aplikasi.
