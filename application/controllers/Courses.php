@@ -20,7 +20,8 @@ class Courses extends CI_Controller {
 	{
 		$user_id = $this->session->userdata('user_id');
 		$role = $this->session->userdata('role');
-
+		
+		$data['role'] = $role;
 		if($role=="admin"){
 			$data['courses'] = $this->Course_model->get_all($user_id);
 			$data['list_dosen'] = $this->User_model->get_user_by_role('dosen');
@@ -29,7 +30,7 @@ class Courses extends CI_Controller {
 			$data['courses'] = $this->Course_model->get_with_instructor($user_id);
 		}
 		else{
-			$data['courses'] = [];
+			$data['courses'] = $this->Course_model->get_with_student($user_id);
 		}
 
 		// $data['courses'] = $this->Course_model->get_all();
@@ -47,8 +48,11 @@ class Courses extends CI_Controller {
 		$data['course'] = $this->Course_model->get_by_id($id);
 		$data['list_students_course'] = $this->Enroll_model->get_students_by_course($id);
 
+		$data['total_students'] = $this->Enroll_model->count_students_by_course($id);
 
-
+		$data['total_students_not_graded'] = $this->Enroll_model->count_students_not_graded($id);
+		
+		$data['total_students_graded'] = $this->Enroll_model->count_students_graded($id);
 		$this->load->view('layout/header');
 		$this->load->view('dashboard/course/rekap' , $data);
 		$this->load->view('layout/footer');
@@ -63,6 +67,25 @@ class Courses extends CI_Controller {
 		$this->load->view('layout/footer');
 
 	}
+
+	public function detailStudent($id_enroll_student){
+
+		
+		$data['course'] = $this->Enroll_model->get_by_id($id_enroll_student);
+		$data['id'] = $id_enroll_student;
+		
+		$data['enroll'] = $this->Enroll_model->get_student_by_by_enroll_id($id_enroll_student);
+
+		
+		$data['final_grade'] = @$this->Assessment_model->get_final_grade_by_enroll_id($id_enroll_student)['final_grade'] ?? 0;
+		$data['assessment'] = $this->Assessment_model->get_assessment_by_enroll_id($id_enroll_student);
+
+
+		$this->load->view('layout/header');
+		$this->load->view('dashboard/course/detail_student', $data);
+		$this->load->view('layout/footer');
+	}
+
 
 	
 	public function rekap($id, $id_enroll_student){

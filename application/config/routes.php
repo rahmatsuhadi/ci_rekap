@@ -60,13 +60,15 @@ $route['dashboard/courses/create'] = 'courses/create';
 
 $route['dashboard/courses/(:num)'] = 'courses/detail/$1';  
 
+
+$route['dashboard/courses/rekap/(:num)'] = 'courses/detailStudent/$1';
+
 $route['dashboard/courses/(:num)/rekap/(:num)'] = 'courses/rekap/$1/$2';
 
 
 $route['dashboard/courses/(:num)/assessment/(:num)/delete'] = 'assessment/delete/$1/$2';
 $route['dashboard/courses/(:num)/assessment'] = 'assessment/detail/$1/';
 $route['dashboard/courses/(:num)/assessment/store'] = 'assessment/store/$1';
-
 
 
 

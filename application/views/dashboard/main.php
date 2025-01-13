@@ -1,5 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
+
 ?>
 
                 <!-- Begin Page Content -->
@@ -8,7 +9,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-                        <i class="bi bi-archive-fill"></i>
                         <!-- <i class="fa-brands fa-android"></i> -->
                         <!-- <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                                 class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
@@ -25,7 +25,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 </div>
                                 <div class="card-body flex-column flex-md-row d-flex">
                                     <div class="d-flex border  mx-sm-3">
-                                        <img src="https://i2.wp.com/genshinbuilds.aipurrjects.com/genshin/characters/yae_miko/image.png?strip=all&quality=75&w=256" width="120" height="120"
+                                        <img src="https://avatar.iran.liara.run/public/17" width="120" height="120"
                                             class="m-auto" alt="...">
                                     </div>
                                     <div>
@@ -35,7 +35,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         
 
                                             <h5 class="font-weight-bold"><?=$this->session->userdata('role');?></h5>
-                                            <p><?=$this->session->userdata('identity');?></p>
+                                            <p><?=$this->session->userdata('name');?></p>
                                             <p  class="card-text">Universitas Amikom Yogyakarta</p>
                                         </div>
 
@@ -82,7 +82,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             <tr>
                                                 <td>
                                                     <div>
-                                                        <a href="<?=base_url().'dashboard/courses/'.$course['course_id']?>">
+                                                        <a href="<?= base_url($role=="mahasiswa" ? "dashboard/courses/rekap/".$course['enrollment_id'] : "dashboard/courses/".$course['course_id'])?>">
                                                             <h6 class="font-weight-bold"><?=$course['course_name']?></h6>
                                                         </a>
                                                         <span><?=$course['code_name']?></span>

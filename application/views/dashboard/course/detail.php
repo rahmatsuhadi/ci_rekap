@@ -6,6 +6,7 @@
         <div class="card-header bg-primary text-white">
             <h6 class="fw-bold mb-0">Rekap Hasil Mahasiswa</h6>
         </div>
+        
         <div class="card-body">
             <div class="row gx-5">
                 <div class="col-12 col-lg-6 mb-3">

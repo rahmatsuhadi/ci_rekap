@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Login</title>
+    <title>Login Page</title>
 
     <!-- Custom fonts for this template-->
     <link href="<?=base_url().'assets/fontawesome-free/css/all.min.css'?>" rel="stylesheet" type="text/css">
@@ -25,9 +25,10 @@
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
+        
 
     <!-- Custom styles for this template-->
-    <link href="<?=base_url().'assets/css/sb-admin-2.min.css'?>" rel="stylesheet">
+    <link href="<?=base_url().'assets/css/sb-admin-2.css'?>" rel="stylesheet">
 
 </head>
 
@@ -39,8 +40,17 @@
             <div class="col-md-6">                      
                         
                 <div class="card shadow-lg ">
+                    <div class="card-header bg-primary">
+                        
+                    <h4 class="card-title text-center my-4 text-white font-weight-bold">Silahkan Login Terlebih Dahulu</h4>
+                
+                </div>
                     <div class="card-body p-5">
-                        <h4 class="card-title text-center mb-4 font-weight-bold">Dashboard Login</h4>
+                        <div class="w-full d-flex justify-content-center mb-4">
+                            <img width="240" class="m-0" height="90" src="https://amikom.ac.id/theme/material/custom/images/logos/icon_text/icontext_amikom_100p.png" alt="">
+
+                        </div>                 
+
                           <!-- Menampilkan pesan error jika ada -->
                           <?php if ($this->session->flashdata('error')): ?>
                             <div style="color: red;">
@@ -68,7 +78,7 @@
                                 <label class="form-check-label" for="rememberMe">Remember Me</label>
                             </div>
                             <!-- Login Button -->
-                            <button type="submit" class="btn btn-primary btn-block">Login</button>
+                            <button type="submit" class="btn bg-primary text-white font-weight-bold btn-block">Masuk</button>
                         </form>
                         <!-- <hr> -->
                         <!-- Social Media Login Buttons -->
