@@ -105,7 +105,7 @@
                                                 <th>Identity</th>
                                                 <th>Dinilai</th>
                                                 <th>Status</th>
-                                                <th>Action</th>
+                                                <!-- <th>Action</th> -->
                                             </tr>
                                         </thead>
                                         <!-- <tfoot>
@@ -131,7 +131,7 @@
                                                     <td><?=$user['identity']?></td>
                                                     <td><?=$user['grade_id'] ? 'Ya' : 'Tidak' ?>
                                                     <td><?=$user['status']?></td>
-                                                <td>
+                                                <!-- <td>
                                                     <button type="button" class="btn btn-sm btn-outline-danger" data-toggle="modal" data-target="#delete-modal-<?=$user['user_id']?>" type="button">
                                                         <i class="fas fa-solid fa-trash text-danger"></i>                                                        
                                                     </button>
@@ -155,7 +155,7 @@
                                                             </div>
                                                         </div>
                                                         </div>
-                                                </td>
+                                                </td> -->
                                                 
                                             </tr>
                                         <?php endforeach ?>

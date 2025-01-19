@@ -63,6 +63,10 @@
                 Interface
             </div>
 
+            <?php
+            if($this->session->userdata('role')=="admin"){
+                ?>
+
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
@@ -79,6 +83,10 @@
                     </div>
                 </div>
             </li>
+                <?php
+            }
+            ?>
+
 
             <!-- Nav Item - Utilities Collapse Menu -->
             <!-- <li class="nav-item">

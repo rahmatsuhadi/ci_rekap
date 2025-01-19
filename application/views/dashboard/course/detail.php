@@ -67,7 +67,7 @@
                         </form>
                             <form method="POST" action="">
                                 <input type="hidden" value="<?=$penilaian['grade_id']?>" name="grade_id"/>
-                                <input type="hidden" value="0" name="grade"/>
+                                <!-- <input type="hidden" value="0" name="grade"/> -->
                                 <button type="submit" class="btn btn-sm btn-danger">Delete</button>
                             </form>
                             </div>

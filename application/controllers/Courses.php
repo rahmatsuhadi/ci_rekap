@@ -106,7 +106,15 @@ class Courses extends CI_Controller {
 				$assessment_id = $this->input->post('assessment_id');
 
 				if($grade_id){
-					$result = $this->Grade_model->update_grade_score($grade_id, $grade);									
+
+					if(isset($grade)){
+						$result = $this->Grade_model->update_grade_score($grade_id, $grade);									
+
+					}
+					else{
+						$result = $this->Grade_model->delete_grade($grade_id);															
+					}
+
 				}
 				else{
 					$data_request = array(

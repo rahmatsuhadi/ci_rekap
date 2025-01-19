@@ -42,17 +42,16 @@ class Enroll_model extends CI_Model {
 
             $this->db->from($this->table);
             $this->db->select('enrollments.enrollment_id,
-                enrollments.user_id,
-                users.name,
-                users.identity,
-                users.status,
-                MAX(grades.grade_id) AS grade_id');
-            $this->db->join('users', 'users.user_id = ' . $this->table . '.user_id', 'inner');
-            
+                   enrollments.user_id,
+                   users.name,
+                   users.identity,
+                   users.status,
+                   MAX(CASE WHEN grades.assessment_id IS NOT NULL THEN grades.grade_id END) AS grade_id');
+$this->db->join('users', 'users.user_id = ' . $this->table . '.user_id', 'inner');
+$this->db->join('grades', 'grades.enrollment_id = enrollments.enrollment_id', 'left');
+$this->db->join('assessments', 'assessments.assessment_id = grades.assessment_id', 'left'); // including assessment if available
+$this->db->group_by('enrollments.enrollment_id, enrollments.user_id, users.identity, users.status');
 
-            $this->db->join('grades', 'grades.enrollment_id = enrollments.enrollment_id', 'left');
-            $this->db->join('assessments', 'assessments.assessment_id = grades.assessment_id', 'left');  // menyertakan penilaian jika ada
-            $this->db->group_by('enrollments.enrollment_id, enrollments.user_id, users.identity, users.status');
 
 
             $this->db->where($this->table . '.course_id', $id);
@@ -79,34 +78,28 @@ class Enroll_model extends CI_Model {
     }
 
     public function count_students_not_graded($id){
-        $this->db->select('COUNT(e.enrollment_id) AS total_no_grade');
-        $this->db->from('enrollments e');
-        $this->db->join('grades g', 'e.enrollment_id = g.enrollment_id', 'left');  // LEFT JOIN grades
-        $this->db->where('e.course_id', $id);  // Menambahkan kondisi untuk course_id
-        $this->db->where('g.grade IS NULL');  // Menghitung yang grade-nya NULL
-        
-        // Menjalankan query dan mendapatkan hasilnya
-        $query = $this->db->get();
+       return $this->count_students_by_course($id) - $this->count_students_graded($id);
 
-        
-        // Mengembalikan hasil jumlah
-        return $query->row()->total_no_grade;
     }
-
-    public function count_students_graded($id){
-
-        $this->db->select('COUNT(e.enrollment_id) AS total_with_grade');
-        $this->db->from('enrollments e');
-        $this->db->join('grades g', 'e.enrollment_id = g.enrollment_id', 'left');  // LEFT JOIN grades
-        $this->db->where('e.course_id', $id);  // Menambahkan kondisi untuk course_id
-        $this->db->where('g.grade IS NOT NULL');  // Menghitung yang grade-nya sudah ada
+    public function count_students_graded($id) {
+        $this->db->select('enrollments.enrollment_id, 
+                           MAX(CASE WHEN grades.assessment_id IS NOT NULL THEN grades.grade_id END) AS grade_id');
         
-        // Menjalankan query dan mendapatkan hasilnya
-        $query = $this->db->get();
+        $this->db->from('enrollments');
+        $this->db->join('grades', 'grades.enrollment_id = enrollments.enrollment_id', 'left'); // LEFT JOIN grades
+        $this->db->where('enrollments.course_id', $id);  
+        $this->db->group_by('enrollments.enrollment_id'); // Group by enrollment_id only
+    
+        // Count the number of rows where grade_id is not NULL
+        $this->db->having('grade_id IS NOT NULL');
+    
+        // Count results
+        $count = $this->db->count_all_results();
         
-        // Mengembalikan hasil jumlah
-        return $query->row()->total_with_grade;
+        // Return the count
+        return $count;
     }
+    
 
 
 

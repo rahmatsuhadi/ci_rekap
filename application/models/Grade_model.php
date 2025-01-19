@@ -27,6 +27,11 @@ class Grade_model extends CI_Model {
     {
         return $this->db->insert($this->table, $data);
     }
+    public function delete_grade($id){
+        $this->db->where('grade_id', $id);
+        return $this->db->delete($this->table);
+
+    }
 
 
 }
